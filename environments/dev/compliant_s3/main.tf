@@ -1,4 +1,5 @@
 
+
 module "compliant_s3_backend" {
   source = "../../../modules/compliant_s3"
   providers = {
@@ -11,4 +12,3 @@ module "compliant_s3_backend" {
   owner          = var.owner
   email_endpoint = var.email_endpoint
 }
-

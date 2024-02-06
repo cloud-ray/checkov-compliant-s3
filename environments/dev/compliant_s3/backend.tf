@@ -1,4 +1,4 @@
-# Official Backend for Compliant S3 .tfstate 
+# Official Backend for Compliant S3 .tfstate
 
 terraform {
   backend "s3" {

@@ -1,8 +1,7 @@
-# root/environments/dev/backend.tf
 
 terraform {
   backend "s3" {
-    bucket  = "cloudray-dev-origin-85"
+    bucket  = "use-output-after-apply"
     key     = "dev/terraform.tfstate"
     region  = "ap-northeast-1"
     encrypt = true

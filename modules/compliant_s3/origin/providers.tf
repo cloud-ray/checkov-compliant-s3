@@ -14,8 +14,3 @@ terraform {
     }
   }
 }
-
-# Origin Bucket Region
-provider "aws" {
-  alias = "origin"
-}
