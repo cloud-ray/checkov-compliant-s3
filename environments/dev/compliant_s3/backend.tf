@@ -9,3 +9,4 @@ terraform {
     # dynamodb_table = "your-lock-table-name"
   }
 }
+

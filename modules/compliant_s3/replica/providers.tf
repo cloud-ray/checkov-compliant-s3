@@ -15,8 +15,3 @@ terraform {
     }
   }
 }
-
-# Replica Region
-provider "aws" {
-  alias = "replica"
-}
