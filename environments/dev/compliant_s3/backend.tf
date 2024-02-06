@@ -1,4 +1,4 @@
-# Official Backend for Compliant S3 .tfstate 
+# Official Backend for Compliant S3 .tfstate
 
 terraform {
   backend "s3" {
@@ -9,4 +9,3 @@ terraform {
     # dynamodb_table = "your-lock-table-name"
   }
 }
-

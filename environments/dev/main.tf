@@ -7,5 +7,3 @@ resource "aws_vpc" "this" {
     Name = "main-vpc"
   }
 }
-
-
