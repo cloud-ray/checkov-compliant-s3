@@ -1,0 +1,53 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    # Git style
+    - id: check-added-large-files
+    - id: check-merge-conflict
+
+    # Common errors
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+      args: [--markdown-linebreak-ext=md]
+      exclude: CHANGELOG.md
+
+    # Cross platform
+    - id: check-case-conflict
+    - id: mixed-line-ending
+      args: [--fix=lf]
+
+    # Security
+    - id: detect-aws-credentials
+      args: ['--allow-missing-credentials']
+    - id: detect-private-key
+
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.86.0
+  hooks:
+    # Formatting
+    - id: terraform_fmt
+      exclude: '^environments/'
+    - id: terraform_validate
+      exclude: '^environments/'
+    - id: terraform_tflint
+      exclude: '^environments/'
+
+    # Security
+    - id: terraform_checkov
+      exclude: '^environments/'
+
+    # Docs
+    - id: terraform_docs
+      exclude: '^environments/'
+      args:
+      - --hook-config=--path-to-file=README.md
+      - --hook-config=--add-to-existing-file=true
+      - --hook-config=--create-file-if-not-exist=true
+      - --hook-config=--use-standard-markers=true
+
+    # # Costs
+    # - id: infracost_breakdown
+    #   args:
+    #   - --args=--path=.
+    #   verbose: true # Always show costs
